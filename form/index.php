@@ -13,7 +13,6 @@ Vous avez le choix de la méthode.
 Utiliser qu'une seule page.
 
 
-
 ##Exercice 7 Au formulaire de l'exercice 5, ajouter un champ d'envoi de fichier. Afficher en plus de ce qui est demandé à l'exercice 6, le nom et l'extension du fichier.
 
 ##Exercice 8 Sur le formulaire de l'exercice 6, en plus de ce qui est demandé sur les exercices précédent, vérifier que le fichier transmis est bien un fichier pdf.
@@ -33,7 +32,7 @@ Utiliser qu'une seule page.
     
 <?php 
 
-    if( isset($_POST)){
+    if( !isset($_POST['submit'])  ){         
         
 ?>
     <form action=index.php method=POST>
@@ -44,12 +43,20 @@ Utiliser qu'une seule page.
             <option value= Mme>Mme</option>
 
         </select>
-        <button type=submit>Envoyer</button>
+        <label for="file">Joindre un fichier</label>
+        <input type="file" id="file" name="file">
+        <label for="file">Joindre un second fichier (exo8)</label>
+
+        <input type="file" id="file" name="file"  accept=".pdf">
+
+        <button type=submit name=submit>Envoyer</button>
     </form>
 
 <?php
     } else {
         print_r( $_POST);  
+        echo "Je connais maintenant ton nom: " . $_POST['nom'] . " ,ton prénom: " . $_POST['prenom'] . " et ta civilité: " . $_POST['civilite'] . "<br/> Je sais aussi que tu te proménes avec un fichier du nom de: " .$_POST['file'];
+
     };
 ?>
 </body>
