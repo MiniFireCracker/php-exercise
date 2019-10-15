@@ -16,7 +16,7 @@ var_dump($_SESSION);
 
 <h3>Moi? Ben, je sais pas...</h3>
 
-<h4>Je vais juste t'appeller <?php echo $_SESSION['$prenom'] . ' ' . $_SESSION['$nom'] ; ?>  et dire que tu as <?php echo $_SESSION['$age']; ?> ans.</h4>
+<h4>Je vais juste t'appeller <?php echo $_SESSION['prenom'] . ' ' . $_SESSION['nom'] ; ?>  et dire que tu as <?php echo $_SESSION['age']; ?> ans.</h4>
 <h5>J'avais justement sauvegarder ces variables pour un cas comme celui ci, au cas où...</h5>
 </body>
 </html>
